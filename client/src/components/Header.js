@@ -29,7 +29,7 @@ class Header extends Component {
 				<div className="nav-wrapper">
 					<ul className="left" />
 					<Link
-						to={this.props.atuh ? '/Landing' : '/'}
+						to={this.props.auth ? '/Landing' : '/'}
 						className="center brand-logo"
 					>
 						{' < / '}

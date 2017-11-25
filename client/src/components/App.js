@@ -30,11 +30,7 @@ class App extends Component {
 						<div className="container">
 							<Route exact={true} path="/" component={Landing} />
 							<Route exact={true} path="/portfolio" component={Portfolio} />
-							<Route
-								exact={true}
-								path="/portfolio/add"
-								component={PortfolioAdd}
-							/>
+							<Route path="/portfolio/add" component={PortfolioAdd} />
 						</div>
 					</div>
 				</BrowserRouter>

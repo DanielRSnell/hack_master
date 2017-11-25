@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
 	return (
 		<div style={{ textAlign: 'center' }}>
-			<h1>Cool Stuff</h1>
+			<Link to="/portfolio/add">
+				<h1>Cool Stuff</h1>
+				<i className="material-icons">add</i>
+			</Link>
 			<h4 className="subheader-content">
 				This is just some header below the header.
 			</h4>
