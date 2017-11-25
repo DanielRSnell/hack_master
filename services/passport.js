@@ -25,20 +25,19 @@ passport.use(
 			callbackURL: '/auth/google/callback',
 			proxy: true
 		},
-		(accessToken, refreshToken, profile, done) => {
-			User.findOne({ googleID: profile.id }).then(existingUser => {
-				if (existingUser) {
-					// Does a record exist?
-					done(null, existingUser);
-				} else {
-					// If Not, let's create one!
-					new User({ googleID: profile.id })
-						.save()
-						// Actions for new non-duplicate users
-
-						.then(user => done(null, user));
-				}
+		async (accessToken, refreshToken, profile, done) => {
+			const exisitingUser = await User.findOne({
+				googleID: profile.id
 			});
+
+			if (existingUser) {
+				return done(null, existingUser);
+			}
+
+			const user = await new User({
+				googleID: profile.id
+			}).save();
+			done(null, user);
 		}
 	)
 );
