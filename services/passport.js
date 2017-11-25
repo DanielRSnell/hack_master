@@ -1,4 +1,4 @@
-const keys = require('../config/keys.js');
+const keys = require('../config/keys');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
@@ -15,8 +15,6 @@ passport.deserializeUser((id, done) => {
 	});
 });
 
-// Manage using a cookie
-
 passport.use(
 	new GoogleStrategy(
 		{
@@ -26,17 +24,13 @@ passport.use(
 			proxy: true
 		},
 		async (accessToken, refreshToken, profile, done) => {
-			const exisitingUser = await User.findOne({
-				googleID: profile.id
-			});
+			const existingUser = await User.findOne({ googleID: profile.id });
 
 			if (existingUser) {
 				return done(null, existingUser);
 			}
 
-			const user = await new User({
-				googleID: profile.id
-			}).save();
+			const user = await new User({ googleID: profile.id }).save();
 			done(null, user);
 		}
 	)
