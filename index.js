@@ -1,4 +1,6 @@
 const express = require('express');
+const expressGraphQL = require('express-graphql');
+const schema = require('./Schema/schema.js');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
@@ -12,6 +14,15 @@ mongoose.connect(keys.mongoURI);
 
 // Function that calls expres - Express is running!
 const app = express();
+
+// Establish the GraphQL Server
+app.use(
+	'/graphql',
+	expressGraphQL({
+		schema: schema,
+		graphiql: true
+	})
+);
 
 // Establish cookies within the application
 
