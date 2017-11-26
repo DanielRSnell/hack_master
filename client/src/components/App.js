@@ -34,7 +34,6 @@ class App extends Component {
 						</div>
 					</div>
 				</BrowserRouter>
-				<div className="container" />
 			</div>
 		);
 	}
