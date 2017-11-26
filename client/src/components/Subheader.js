@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Subheader extends Component {
 	render() {
@@ -12,13 +13,13 @@ class Subheader extends Component {
 					<div className="center nav-content">
 						<ul className="center tabs tabs-transparent">
 							<li className="tab">
-								<a href="/">TEST</a>
+								<Link to="/">HOME</Link>
 							</li>
 							<li className="tab">
-								<a href="/">TEST</a>
+								<Link to="/portfolio">PORTFOLIO</Link>
 							</li>
 							<li className="tab">
-								<a href="/">TEST</a>
+								<Link to="/portfolio/add">ADD COINS</Link>
 							</li>
 							<li className="tab">
 								<a href="/">TEST</a>

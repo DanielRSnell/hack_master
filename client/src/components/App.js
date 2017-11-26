@@ -1,10 +1,9 @@
 // Required
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import '../style/main.css';
-
 // Components
 import Header from './Header';
 import Subheader from './Subheader';

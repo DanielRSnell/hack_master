@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Landing = () => {
 	return (
-		<div style={{ textAlign: 'center' }}>
+		<div style={{ textAlign: 'justify' }}>
 			<Link to="/portfolio/add">
-				<h1>Landing</h1>
-				<i className="material-icons">add</i>
+				<h1>CRYPTO MARKET DATA</h1>
 			</Link>
 			<h4 className="subheader-content">
 				This is just some header below the header.

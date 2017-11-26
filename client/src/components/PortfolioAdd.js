@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PortfolioAdd = () => {
 	return (
 		<div style={{ textAlign: 'center' }}>
-			<h1>Portfolio Add</h1>
+			<Link to="/portfolio/add">
+				<h1>BUILD YOUR PORTFOLIO</h1>
+			</Link>
 			<h4 className="subheader-content">
 				This is just some header below the header.
 			</h4>

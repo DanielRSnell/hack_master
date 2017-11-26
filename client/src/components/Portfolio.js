@@ -5,8 +5,7 @@ const Portfolio = () => {
 	return (
 		<div style={{ textAlign: 'center' }}>
 			<Link to="/portfolio/add">
-				<h1>Portfolio</h1>
-				<i className="material-icons">add</i>
+				<h1>TRACK YOUR PERFORMANCE</h1>
 			</Link>
 			<h4 className="subheader-content">
 				This is just some header below the header.
