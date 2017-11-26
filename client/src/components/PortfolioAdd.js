@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const PortfolioAdd = () => {
 	return (
-		<div style={{ textAlign: 'center' }}>
-			<Link to="/portfolio/add">
+		<div style={{ textAlign: 'justify' }}>
+			<Link to="/portfolio">
 				<h1>BUILD YOUR PORTFOLIO</h1>
 			</Link>
 			<h4 className="subheader-content">

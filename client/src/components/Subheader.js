@@ -22,7 +22,7 @@ class Subheader extends Component {
 								<Link to="/portfolio/add">ADD COINS</Link>
 							</li>
 							<li className="tab">
-								<a href="/">TEST</a>
+								<Link to="/query/stuff">Query</Link>
 							</li>
 							<li className="tab">
 								<a href="/">TEST</a>

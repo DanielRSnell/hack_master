@@ -1,9 +1,15 @@
 // Required
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import '../style/main.css';
+
+// Apollo Client Imports for GraphQL
+
+// Apollo Client Dpenedencies for changes
+// import { InMemoryCache } from 'apollo-cache-inmemory';
+
 // Components
 import Header from './Header';
 import Subheader from './Subheader';
@@ -12,6 +18,7 @@ import Subheader from './Subheader';
 import Landing from './Landing';
 import Portfolio from './Portfolio';
 import PortfolioAdd from './PortfolioAdd';
+import QueryTest from './Queries/QueryTest.js';
 
 // View State Starts Here
 class App extends Component {
@@ -27,7 +34,7 @@ class App extends Component {
 						<Header />
 						<Subheader />
 						<div className="container">
-							<Route exact={true} path="/" component={Landing} />
+							<Route exact={true} path="/" component={QueryTest} />
 							<Route exact={true} path="/portfolio" component={Portfolio} />
 							<Route path="/portfolio/add" component={PortfolioAdd} />
 						</div>

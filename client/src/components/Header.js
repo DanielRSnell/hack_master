@@ -27,10 +27,9 @@ class Header extends Component {
 		return (
 			<nav>
 				<div className="nav-wrapper">
-					<ul className="left" />
 					<Link
 						to={this.props.auth ? '/portfolio' : '/'}
-						className="center brand-logo"
+						className="left brand-logo"
 					>
 						{' < / '}
 						<span className="logo-style-hack"> H A C K </span>
