@@ -7,6 +7,7 @@ const keys = require('./config/keys');
 require('./models/users');
 require('./services/passport');
 
+mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);
 
 // Function that calls expres - Express is running!
@@ -34,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
 
 	const path = require('path');
 	app.get('*', (req, res) => {
-		res.sendFile(path.resolve(_dirname, 'client', 'build', 'index.html'));
+		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 	});
 }
 
