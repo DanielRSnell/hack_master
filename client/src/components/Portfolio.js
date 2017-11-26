@@ -5,7 +5,7 @@ const Portfolio = () => {
 	return (
 		<div style={{ textAlign: 'center' }}>
 			<Link to="/portfolio/add">
-				<h1>Cool Stuff</h1>
+				<h1>Portfolio</h1>
 				<i className="material-icons">add</i>
 			</Link>
 			<h4 className="subheader-content">

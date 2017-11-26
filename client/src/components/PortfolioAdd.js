@@ -3,7 +3,7 @@ import React from 'react';
 const PortfolioAdd = () => {
 	return (
 		<div style={{ textAlign: 'center' }}>
-			<h1>Cool Stuff</h1>
+			<h1>Portfolio Add</h1>
 			<h4 className="subheader-content">
 				This is just some header below the header.
 			</h4>
