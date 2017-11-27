@@ -2,6 +2,11 @@ nav {
 	background-color: #2b2424;
 }
 
+.highcharts-example {
+	height: 400px;
+	min-width: 310px;
+}
+
 .main-content-body {
 	display: inline-flex;
 }

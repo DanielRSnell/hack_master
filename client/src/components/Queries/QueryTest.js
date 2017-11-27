@@ -32,11 +32,12 @@ class QueryTest extends Component {
 		if (this.props.data.loading) {
 			return <div>Loading ... </div>;
 		}
+
 		return (
 			<div className="coin-table-list">
 				<table className="highlight striped centered responsive-table">
 					<thead>
-						<tr>
+						<tr className="hackcoin-tableheader">
 							<th>RANK</th>
 							<th>ICON</th>
 							<th>NAME</th>

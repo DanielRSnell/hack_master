@@ -8,7 +8,10 @@ const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 require('./models/users');
 require('./services/passport');
+const binance = require('node-binance-api');
+require('./wrappers/binance');
 
+// Database connect and auth
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);
 
@@ -23,7 +26,11 @@ app.use(
 		graphiql: true
 	})
 );
-
+// Binance Test
+binance.options({
+	APIKEY: keys.binanceS_public,
+	APISECRET: keys.binanceKey_public
+});
 // Establish cookies within the application
 
 app.use(

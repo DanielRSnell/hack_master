@@ -18,8 +18,8 @@ import Subheader from './Subheader';
 import Landing from './Landing';
 import Portfolio from './Portfolio';
 import PortfolioAdd from './PortfolioAdd';
-import QueryTest from './Queries/QueryTest.js';
-
+import QueryTest from './Queries/QueryTest';
+import Chart from './Chart';
 // View State Starts Here
 class App extends Component {
 	componentDidMount() {
@@ -37,6 +37,7 @@ class App extends Component {
 							<Route exact={true} path="/" component={QueryTest} />
 							<Route exact={true} path="/portfolio" component={Portfolio} />
 							<Route path="/portfolio/add" component={PortfolioAdd} />
+							<Route path="/cryptocurrency/coin" component={Chart} />
 						</div>
 					</div>
 				</BrowserRouter>

@@ -26,7 +26,22 @@ const CoinInfo = new GraphQLObjectType({
 		percent_change_1h: { type: GraphQLFloat },
 		percent_change_24h: { type: GraphQLFloat },
 		percent_change_7d: { type: GraphQLFloat },
-		last_updated: { type: GraphQLInt }
+		last_updated: { type: GraphQLInt },
+		coin_news: {
+			type: new GraphQLList(coinNews),
+			args: {
+				symbol: { type: GraphQLString }
+			},
+			resolve(parentValue, args) {
+				return axios
+					.get(
+						`https://cryptopanic.com/api/posts/?auth_token=8d6e7dba3f484613693516ded9b905c83ac894bc&currency=${
+							parentValue.symbol
+						}&count=10`
+					)
+					.then(response => response.data.results);
+			}
+		}
 	})
 });
 
@@ -65,6 +80,15 @@ const voteData = new GraphQLObjectType({
 	})
 });
 
+const currencyNews = new GraphQLObjectType({
+	name: 'currencyTag',
+	fields: () => ({
+		code: { type: GraphQLString },
+		title: { type: GraphQLString },
+		slug: { type: GraphQLString }
+	})
+});
+
 const sourceData = new GraphQLObjectType({
 	name: 'sourceInfo',
 	fields: () => ({
@@ -78,6 +102,7 @@ const coinNews = new GraphQLObjectType({
 	name: 'coinPosts',
 	fields: () => ({
 		id: { type: GraphQLInt },
+		currencies: { type: currencyNews },
 		title: { type: GraphQLString },
 		created_at: { type: GraphQLString },
 		published_at: { type: GraphQLString },
@@ -105,6 +130,8 @@ const bittrexMarkets = new GraphQLObjectType({
 		LogoUrl: { type: GraphQLString }
 	})
 });
+
+// Query Modifier Functions
 
 // This is the root query of the schema
 const RootQuery = new GraphQLObjectType({
