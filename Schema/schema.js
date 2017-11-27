@@ -39,7 +39,7 @@ const CoinInfo = new GraphQLObjectType({
 							parentValue.symbol
 						}&count=10`
 					)
-					.then(response => response.data.result);
+					.then(response => response.data.results);
 			}
 		},
 		btc_history: {
