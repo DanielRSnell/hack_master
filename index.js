@@ -1,5 +1,9 @@
 const express = require('express');
 const expressGraphQL = require('express-graphql');
+const { createServer } = require('http');
+const { execute, subscribe } = require('graphql');
+const { PubSub } = require('graphql-subscriptions');
+const { SubscriptionServer } = require('subscriptions-transport-ws');
 const schema = require('./Schema/schema.js');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
@@ -26,6 +30,7 @@ app.use(
 		graphiql: true
 	})
 );
+
 // Binance Test
 binance.options({
 	APIKEY: keys.binanceS_public,

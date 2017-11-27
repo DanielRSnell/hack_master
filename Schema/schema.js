@@ -39,9 +39,89 @@ const CoinInfo = new GraphQLObjectType({
 							parentValue.symbol
 						}&count=10`
 					)
-					.then(response => response.data.results);
+					.then(response => response.data.result);
+			}
+		},
+		btc_history: {
+			type: new GraphQLList(historyMeta),
+			args: {
+				symbol: { type: GraphQLString }
+			},
+			resolve(parentValue, args) {
+				return axios
+					.get(
+						`https://min-api.cryptocompare.com/data/histoday?fsym=${
+							parentValue.symbol
+						}&tsym=BTC&allData=true`
+					)
+					.then(response => response.data.Data);
+			}
+		},
+		eth_history: {
+			type: new GraphQLList(historyMeta),
+			resolve(parentValue, args) {
+				return axios
+					.get(
+						`https://min-api.cryptocompare.com/data/histoday?fsym=${
+							parentValue.symbol
+						}&tsym=ETH&allData=true`
+					)
+					.then(response => response.data.Data);
+			}
+		},
+		usd_history: {
+			type: new GraphQLList(historyMeta),
+			resolve(parentValue, args) {
+				return axios
+					.get(
+						`https://min-api.cryptocompare.com/data/histoday?fsym=${
+							parentValue.symbol
+						}&tsym=USD&allData=true`
+					)
+					.then(response => response.data.Data);
 			}
 		}
+	})
+});
+
+// const binanceKline = new GraphQLObjectType({
+// 	name: 'CandleSticks',
+// 	fields: () => ({
+// 		feed:
+// 	})
+// })
+
+const historyFetch = new GraphQLObjectType({
+	name: 'coinHistorical',
+	fields: () => ({
+		Response: { type: GraphQLString },
+		Type: { type: GraphQLInt },
+		Aggregated: { type: GraphQLString },
+		Data: { type: historyMeta },
+		TimeTo: { type: GraphQLInt },
+		TimeFrom: { type: GraphQLInt },
+		ConversionType: { type: conversionMeta }
+	})
+});
+
+const conversionMeta = new GraphQLObjectType({
+	name: 'ConversionType',
+	fields: () => ({
+		type: { type: GraphQLInt },
+		conversionSymbol: { type: GraphQLString }
+	})
+});
+
+const historyMeta = new GraphQLObjectType({
+	name: 'Histoday',
+	fields: () => ({
+		time: { type: GraphQLInt },
+		close: { type: GraphQLFloat },
+		high: { type: GraphQLFloat },
+		low: { type: GraphQLFloat },
+		open: { type: GraphQLFloat },
+		volumefrom: { type: GraphQLFloat },
+		volumeto: { type: GraphQLFloat }
 	})
 });
 
@@ -81,7 +161,7 @@ const voteData = new GraphQLObjectType({
 });
 
 const currencyNews = new GraphQLObjectType({
-	name: 'currencyTag',
+	name: 'currency',
 	fields: () => ({
 		code: { type: GraphQLString },
 		title: { type: GraphQLString },

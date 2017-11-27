@@ -23,10 +23,12 @@
 		"express": "^4.16.2",
 		"express-graphql": "^0.6.11",
 		"graphql": "^0.11.7",
+		"graphql-subscriptions": "^0.5.5",
 		"mongoose": "^4.13.4",
 		"node-binance-api": "^0.2.7",
 		"nodemon": "^1.12.1",
 		"passport": "^0.4.0",
-		"passport-google-oauth20": "^1.0.0"
+		"passport-google-oauth20": "^1.0.0",
+		"subscriptions-transport-ws": "^0.9.1"
 	}
 }
