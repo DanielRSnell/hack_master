@@ -52,7 +52,7 @@ const CoinInfo = new GraphQLObjectType({
 					.get(
 						`https://min-api.cryptocompare.com/data/histoday?fsym=${
 							parentValue.symbol
-						}&tsym=BTC&allData=true`
+						}&tsym=BTC&limit=10`
 					)
 					.then(response => response.data.Data);
 			}

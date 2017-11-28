@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { Link } from 'react-router-dom';
+import _ from 'underscore';
 
 class QueryTest extends Component {
 	renderCoins() {
@@ -18,7 +19,7 @@ class QueryTest extends Component {
 							}
 						/>
 					</td>
-					<td>{coin.name}</td>
+					<td className={coin.name}>{coin.name}</td>
 					<td>${coin.price_usd}</td>
 					<td>{coin.price_btc}</td>
 					<td>{coin.percent_change_1h}%</td>
@@ -30,12 +31,19 @@ class QueryTest extends Component {
 
 	render() {
 		if (this.props.data.loading) {
-			return <div>Loading ... </div>;
+			var loadCount = 0;
+			return loadCount + 1;
+			console.log(loadCount);
+			if (loadCount > 0 && this.props.data.loading == true) {
+				return <div>Data is loading {this.loadCount}</div>;
+				console.log(this.loadCount);
+			}
 		}
 
+		console.log();
 		return (
 			<div className="coin-table-list">
-				<table className="highlight striped centered responsive-table">
+				<table className="highlight striped responsive-table">
 					<thead>
 						<tr className="hackcoin-tableheader">
 							<th>RANK</th>
@@ -56,7 +64,7 @@ class QueryTest extends Component {
 
 const query = gql`
 	{
-		coins(limit: 100) {
+		coins(limit: 10) {
 			id
 			rank
 			name

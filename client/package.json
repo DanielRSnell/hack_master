@@ -23,6 +23,8 @@
 		"graphql": "^0.11.7",
 		"graphql-tag": "^2.5.0",
 		"highcharts": "^6.0.3",
+		"material-ui": "^1.0.0-beta.21",
+		"material-ui-icons": "^1.0.0-beta.17",
 		"materialize-css": "^0.100.2",
 		"node-binance-api": "^0.2.7",
 		"react": "^16.1.1",
