@@ -18,7 +18,8 @@ class Chart extends Component {
 						time: res.time,
 						open: res.open,
 						high: res.high,
-						low: res.low
+						low: res.low,
+						close: res.close
 					};
 				})
 				.done(data => {
@@ -34,16 +35,16 @@ class Chart extends Component {
 	drawChart(data) {
 		Highcharts.chart('chart', {
 			title: {
-				text: 'Solar Employment Growth by Sector, 2010-2016'
+				text: 'Test Chart'
 			},
 
 			subtitle: {
-				text: 'Source: thesolarfoundation.com'
+				text: 'Testing Stuff'
 			},
 
 			yAxis: {
 				title: {
-					text: 'Number of Employees'
+					text: 'Some Test Data'
 				}
 			},
 			legend: {
@@ -101,7 +102,11 @@ class Chart extends Component {
 			}
 		}
 
-		return <div />;
+		return (
+			<div>
+				<Chart />
+			</div>
+		);
 	}
 }
 
@@ -109,6 +114,7 @@ const query = gql`
 	{
 		coin(id: "district0x") {
 			btc_history {
+				time
 				high
 				low
 				open
