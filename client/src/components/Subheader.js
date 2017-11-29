@@ -25,34 +25,7 @@ class Subheader extends Component {
 								<Link to="/query/stuff">Query</Link>
 							</li>
 							<li className="tab">
-								<a href="/">TEST</a>
-							</li>
-							<li className="tab">
-								<a href="/">TEST</a>
-							</li>
-							<li className="tab">
-								<a href="/">TEST</a>
-							</li>
-							<li className="tab">
-								<a href="/">TEST</a>
-							</li>
-							<li className="tab">
-								<a href="/">TEST</a>
-							</li>
-							<li className="tab">
-								<a href="/">TEST</a>
-							</li>
-							<li className="tab">
-								<a href="/">TEST</a>
-							</li>
-							<li className="tab">
-								<a href="/">TEST</a>
-							</li>
-							<li className="tab">
-								<a href="/">TEST</a>
-							</li>
-							<li className="tab">
-								<a href="/">TEST</a>
+								<a href="/test">TEST PAGE</a>
 							</li>
 						</ul>
 					</div>

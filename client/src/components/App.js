@@ -20,7 +20,7 @@ import Portfolio from './Portfolio';
 import PortfolioAdd from './PortfolioAdd';
 import QueryTest from './Queries/QueryTest';
 import CoinPage from './CoinPage';
-import Chart from './Widgets/Chart';
+import TestPage from './test';
 
 // View State Starts Here
 class App extends Component {
@@ -40,7 +40,7 @@ class App extends Component {
 							<Route exact={true} path="/portfolio" component={Portfolio} />
 							<Route path="/portfolio/add" component={PortfolioAdd} />
 							<Route path="/cryptocurrency/coin" component={CoinPage} />
-							<Route exact={true} path="/test" component={Chart} />
+							<Route exact={true} path="/test" component={TestPage} />
 						</div>
 					</div>
 				</BrowserRouter>
