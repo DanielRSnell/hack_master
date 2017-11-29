@@ -9,9 +9,7 @@ const Testpage = () => {
 			<div className="container">
 				<CandleChart />
 			</div>
-			<div>
-				<LineChart />
-			</div>
+			<div />
 		</div>
 	);
 };

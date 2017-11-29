@@ -6,7 +6,7 @@ import Highcharts from 'highcharts/highstock';
 // Load Highmaps as a module
 require('highcharts/modules/map')(Highcharts);
 
-class lineChart extends Component {
+class LineChart extends Component {
 	componentDidMount() {
 		console.log('chart mounted');
 	}
@@ -32,7 +32,7 @@ class lineChart extends Component {
 
 	drawChart(data) {
 		console.log(data);
-		Highcharts.chart('lineChart', {
+		Highcharts.chart('LineChart', {
 			title: {
 				text: 'Test Chart'
 			},
@@ -60,7 +60,7 @@ class lineChart extends Component {
 		return (
 			<div>
 				<h1>Chart</h1>
-				<div id="lineChart" />
+				<div id="LineChart" />
 			</div>
 		);
 	}
@@ -80,4 +80,4 @@ const query = gql`
 	}
 `;
 
-export default graphql(query)(lineChart);
+export default graphql(query)(LineChart);

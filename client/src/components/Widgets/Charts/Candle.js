@@ -28,7 +28,7 @@ class CandleChart extends Component {
 
 		data.forEach(itr => {
 			const convertTime = m_().valueOf(itr.time);
-			console.log(convertTime);
+			//console.log(convertTime);
 			ohlc.push([
 				m_().valueOf(itr.time), // date
 				itr.open, // open
@@ -111,19 +111,13 @@ class CandleChart extends Component {
 				{
 					type: 'candlestick',
 					name: 'District0x',
-					data: ohlc,
-					dataGrouping: {
-						units: groupingUnits
-					}
+					data: ohlc
 				},
 				{
 					type: 'column',
 					name: 'Volume',
 					data: volume,
-					yAxis: 1,
-					dataGrouping: {
-						units: groupingUnits
-					}
+					yAxis: 1
 				}
 			]
 		});
