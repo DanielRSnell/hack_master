@@ -20,33 +20,27 @@ class CandleChart extends Component {
 	}
 
 	prepareData(data) {
-		console.log(data);
 		const ohlc = [],
 			volume = [],
 			dataLength = data.length,
 			groupingUnits = [['week', [1, 2, 3, 4]], ['month', [1, 2, 3, 4, 6]]];
 
 		data.forEach(itr => {
-			const convertTime = m_().valueOf(itr.time);
 			//console.log(convertTime);
 			ohlc.push([
-				m_().valueOf(itr.time), // date
+				m_.unix(itr.time).valueOf(), // date
 				itr.open, // open
 				itr.high, // high
 				itr.low, // low
 				itr.close // close
 			]);
-			console.log('OHLC DATA PREP');
-			console.log(ohlc);
+
 			volume.push([
-				m_().valueOf(itr.time), // date
-				itr.volumefrom // Volume
+				m_.unix(itr.time).valueOf(), // date
+				itr.volumeto // Volume
 			]);
-			console.log('VOLUME DATA PREP');
-			console.log(volume);
 		});
-		console.log('Checking all fields before charting');
-		console.log(ohlc, volume, dataLength, groupingUnits);
+
 		this.drawChart(ohlc, volume, groupingUnits);
 	}
 
@@ -60,10 +54,6 @@ class CandleChart extends Component {
 	}
 
 	drawChart(ohlc, volume, groupingUnits) {
-		console.log('Organizing The Data');
-		console.log(ohlc);
-		console.log(volume);
-		console.log(groupingUnits);
 		Highcharts.stockChart('CandleChart', {
 			rangeSelector: {
 				selected: 1
@@ -126,7 +116,6 @@ class CandleChart extends Component {
 	render() {
 		return (
 			<div>
-				{this.convertUnix()}
 				<div id="CandleChart" />
 			</div>
 		);
@@ -142,7 +131,7 @@ const query = gql`
 				low
 				open
 				close
-				volumefrom
+				volumeto
 			}
 		}
 	}
