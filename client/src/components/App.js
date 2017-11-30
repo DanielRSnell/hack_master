@@ -1,4 +1,6 @@
 // Required
+/* eslint guard-for-in: 0 */
+/* eslint no-console: 0 */
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -21,7 +23,8 @@ import PortfolioAdd from './PortfolioAdd';
 import QueryTest from './Queries/QueryTest';
 import CoinPage from './CoinPage';
 import TestPage from './test';
-
+// import CoinList from './Widgets/CoinList';
+import CoinTable from './Widgets/table';
 // View State Starts Here
 class App extends Component {
 	componentDidMount() {
@@ -41,6 +44,7 @@ class App extends Component {
 							<Route path="/portfolio/add" component={PortfolioAdd} />
 							<Route path="/cryptocurrency/coin" component={CoinPage} />
 							<Route exact={true} path="/test" component={TestPage} />
+							<Route exact={true} path="/list" component={CoinTable} />
 						</div>
 					</div>
 				</BrowserRouter>

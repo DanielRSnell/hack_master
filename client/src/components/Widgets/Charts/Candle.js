@@ -115,7 +115,7 @@ class CandleChart extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="container-table">
 				<div id="CandleChart" />
 			</div>
 		);

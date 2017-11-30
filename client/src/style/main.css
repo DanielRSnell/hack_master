@@ -2,6 +2,9 @@ nav {
 	background-color: #2b2424;
 }
 
+.container-table {
+	padding: 5em;
+}
 .coin-table-list {
 	padding: 4em;
 }
