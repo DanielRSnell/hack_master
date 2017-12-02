@@ -5,32 +5,37 @@ class Subheader extends Component {
 	render() {
 		return (
 			<div>
-				<nav className="nav-extended">
-					<div className="nav-wrapper-alt">
-						<ul id="nav-mobile" className="right hide-on-med-and-down" />
-						<ul className="side-nav" id="mobile-demo" />
-					</div>
-					<div className="center nav-content">
-						<ul className="center tabs tabs-transparent">
-							<li className="tab">
-								<Link to="/">HOME</Link>
-							</li>
-							<li className="tab">
-								<Link to="/portfolio">PORTFOLIO</Link>
-							</li>
-							<li className="tab">
-								<Link to="/portfolio/add">ADD COINS</Link>
-							</li>
-							<li className="tab">
-								<Link to="/query/stuff">Query</Link>
-							</li>
-							<li className="tab">
-								<a href="/test">TEST PAGE</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
+				<nav className="pt-navbar">
+				
+						<div className="margin: 0 auto; width: 480px;">
+					
+						<div className="pt-navbar-group pt-align-left">
+						<Link to="/">
+						<button className="pt-button pt-minimal">HOME</button>
+						</Link>
+						<span className="pt-navbar-divider" />
+
+						<Link to="/test" >
+						<button className="pt-button pt-minimal">CHART</button>
+						</Link>
+						<span className="pt-navbar-divider" />
+						<Link to="/list">
+						<button className="pt-button pt-minimal">LIST</button>
+						</Link>
+						<span className="pt-navbar-divider" />
+						<Link to="/portfolio">
+						<button className="pt-button pt-minimal">PORTFOLIO</button>
+						</Link>
+						<span className="pt-navbar-divider" />
+						<Link to="/portfolio/add">
+						<button className="pt-button pt-minimal">ADD</button>
+						</Link>
+						<span className="pt-navbar-divider" />
+						
+				</div>
 			</div>
+		</nav>
+	</div>
 		);
 	}
 }

@@ -1,51 +1,18 @@
-nav {
-	background-color: #2b2424;
+.container {
+	padding: 2.5em;
 }
 
-.container-table {
-	padding: 5em;
-}
-.coin-table-list {
-	padding: 4em;
+.ct-numeric {
+	text-align: center;
 }
 
-.main-content-body {
-	display: inline-flex;
-}
-
-.tabs .tab {
-	padding-left: 0.5em;
-	padding-right: 0.1em;
-}
-
-.tabs .tab a {
-	font-weight: bold !important;
-	color: #2b2424 !important;
-}
-
-.nav-extended {
-	background: #f2f23e;
-	color: #fff;
-}
-
-.right {
-	padding-right: 0.75em;
-}
-
-nav .brand-logo {
-	padding-left: 1em;
-}
-
-.logo-style-hack {
+.th-center {
+	text-align: center;
 	font-weight: bold;
-	color: #f2f23e;
+	font-size: 15px;
 }
 
-.logo-style-coin {
-	font-weight: bold;
-	color: #f2f23e;
-}
-
-.coin-table-list {
-	padding-top: 2em;
+.pt-table {
+	position: center;
+	width: 100%!important;
 }

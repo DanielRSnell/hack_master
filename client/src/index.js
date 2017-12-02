@@ -2,9 +2,15 @@
 /* eslint no-console: 0 */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as Blueprint from '@blueprintjs/core';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
+
+// Blueprint JS 
+
+import 'normalize.css/normalize.css';
+import '@blueprintjs/core/dist/blueprint.css';
 
 // Apollo Client Imports for GraphQL
 import { ApolloClient, InMemoryCache } from 'apollo-client-preset';

@@ -115,8 +115,8 @@ class CandleChart extends Component {
 
 	render() {
 		return (
-			<div className="container-table">
-				<div id="CandleChart" />
+			<div className="$pt-grid-size">
+				<div className="$pt-grid-item"id="CandleChart" />
 			</div>
 		);
 	}

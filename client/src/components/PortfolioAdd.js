@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const PortfolioAdd = () => {
 	return (
-		<div style={{ textAlign: 'justify' }}>
+		<div className="container">
 			<Link to="/portfolio">
 				<h1>BUILD YOUR PORTFOLIO</h1>
 			</Link>

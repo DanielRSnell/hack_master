@@ -1,11 +1,15 @@
 // Required
 /* eslint guard-for-in: 0 */
 /* eslint no-console: 0 */
+// or just take everything!
+
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import * as Blueprint from "@blueprintjs/core";
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import '../style/main.css';
+
 
 // Apollo Client Imports for GraphQL
 
@@ -25,6 +29,9 @@ import CoinPage from './CoinPage';
 import TestPage from './test';
 // import CoinList from './Widgets/CoinList';
 import CoinTable from './Widgets/table';
+import sparkCharts from './Widgets/Charts/sparkchart'
+import coinSheet from './Widgets/spreadsheet.js'
+
 // View State Starts Here
 class App extends Component {
 	componentDidMount() {
@@ -39,12 +46,14 @@ class App extends Component {
 						<Header />
 						<Subheader />
 						<div>
-							<Route exact={true} path="/" component={QueryTest} />
+							<Route exact={true} path="/" component={CoinTable} />
 							<Route exact={true} path="/portfolio" component={Portfolio} />
 							<Route path="/portfolio/add" component={PortfolioAdd} />
 							<Route path="/cryptocurrency/coin" component={CoinPage} />
 							<Route exact={true} path="/test" component={TestPage} />
-							<Route exact={true} path="/list" component={CoinTable} />
+							<Route exact={true} path="/list" component={QueryTest} />
+							<Route exact={true} path="/spark" component={sparkCharts} />
+							<Route exact={true} path="/sheet" component={coinSheet} />
 						</div>
 					</div>
 				</BrowserRouter>

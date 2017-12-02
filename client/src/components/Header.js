@@ -3,53 +3,38 @@ import * as Icon from 'react-cryptocoins';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-class Header extends Component {
-	renderContent() {
-		switch (this.props.auth) {
-			case null:
-				return;
-			case false:
-				return (
-					<li>
-						<a href="/auth/google">LOG IN</a>
-					</li>
-				);
-			default:
-				return [
-					<li key="2">
-						<a href="/api/logout">LOGOUT</a>
-					</li>
-				];
-		}
-	}
 
+class Header extends Component {
+
+	
 	render() {
 		return (
-			<nav>
-				<div className="nav-wrapper">
-					<Link
-						to={this.props.auth ? '/portfolio' : '/'}
-						className="left brand-logo"
-					>
-						{' < / '}
-						<span className="logo-style-hack"> H A C K </span>
-						<span className="logo-style-icon">
-							{'[ '}
-							<Icon.Strat />
-							{' ]'}
-						</span>
-						<span className="logo-style-coin"> C O I N</span>
-						{' >'}
-					</Link>
-					<ul className="right">{this.renderContent()}</ul>
-				</div>
-			</nav>
+			<nav className="pt-navbar pt-dark">
+		
+			<div className="pt-navbar-group pt-align-left">
+		
+			<div className="pt-ui-text-large">
+			<span className="pt-icon-chart-large" />
+			   <span className="header-logo-primary"> H A C K  C O I N . I O </span>
+		
+			</div>
+		
+			</div>
+			
+			<div className="pt-navbar-group pt-align-right">
+			
+				<button className="pt-button pt-minimal pt-icon-user">Button</button>
+			
+			<span className="pt-navbar-divider" />
+
+				<button className="pt-button pt-minimal pt-icon-home">Button</button>
+		
+			</div>
+		
+		</nav>
+			
 		);
 	}
 }
 
-function mapStateToProps({ auth }) {
-	return { auth };
-}
-
-export default connect(mapStateToProps)(Header);
+export default Header;

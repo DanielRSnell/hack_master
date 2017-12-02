@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
 	return (
-		<div style={{ textAlign: 'justify' }}>
+		<div className="container">
 			<Link to="/portfolio/add">
 				<h1>TRACK YOUR PERFORMANCE</h1>
 			</Link>
