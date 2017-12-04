@@ -14,14 +14,14 @@
     }
   },
   "dependencies": {
-    "@blueprintjs/core": "^1.33.0",
-    "@blueprintjs/table": "^1.30.0",
+    "antd": "^2.13.11",
     "apollo-cache-inmemory": "^1.1.1",
     "apollo-client": "^2.0.3",
     "apollo-client-preset": "^1.0.3",
     "apollo-link-http": "^1.2.0",
     "axios": "^0.17.1",
     "babel": "^6.23.0",
+    "de-dupe": "^0.0.14",
     "graphql": "^0.11.7",
     "graphql-tag": "^2.5.0",
     "highcharts": "^6.0.3",
@@ -46,5 +46,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6"
   }
 }

@@ -5,10 +5,11 @@
 
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import * as Blueprint from "@blueprintjs/core";
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import '../style/main.css';
+// The Style Sheets
+import '../style/App.css';
+
 
 
 // Apollo Client Imports for GraphQL
@@ -17,46 +18,56 @@ import '../style/main.css';
 // import { InMemoryCache } from 'apollo-cache-inmemory';
 
 // Components
-import Header from './Header';
-import Subheader from './Subheader';
+import MainNav from './MainNav';
+
 
 // Other Pre-Render Options
-import Landing from './Landing';
-import Portfolio from './Portfolio';
-import PortfolioAdd from './PortfolioAdd';
-import QueryTest from './Queries/QueryTest';
-import CoinPage from './CoinPage';
-import TestPage from './test';
-// import CoinList from './Widgets/CoinList';
-import CoinTable from './Widgets/table';
-import sparkCharts from './Widgets/Charts/sparkchart'
-import coinSheet from './Widgets/spreadsheet.js'
+import Portfolio from './pages/Portfolio';
+import CryptoProfile from './pages/CryptoProfile';
+import CoinTable from './library/table';
+
+// Testing Grounds - Where we build things 
+import Test from '../tests/test';
+
 
 // View State Starts Here
+
+
 class App extends Component {
+
+// Antd Design Specification Grid 
+	
 	componentDidMount() {
 		this.props.fetchUser();
 	}
 
 	render() {
+
+		
 		return (
-			<div>
+		
+		<div className="app-grid">
+		
 				<BrowserRouter>
-					<div className="row">
-						<Header />
-						<Subheader />
+
+					<div className="row">					
+				
+					<MainNav />		
+
+
 						<div>
+					
 							<Route exact={true} path="/" component={CoinTable} />
 							<Route exact={true} path="/portfolio" component={Portfolio} />
-							<Route path="/portfolio/add" component={PortfolioAdd} />
-							<Route path="/cryptocurrency/coin" component={CoinPage} />
-							<Route exact={true} path="/test" component={TestPage} />
-							<Route exact={true} path="/list" component={QueryTest} />
-							<Route exact={true} path="/spark" component={sparkCharts} />
-							<Route exact={true} path="/sheet" component={coinSheet} />
+							<Route exact={true} path="/cryptocurrency/:id" component={CryptoProfile} />
+							<Route exact={true} path="/test" component={Test} />
+					
 						</div>
+					
 					</div>
+				
 				</BrowserRouter>
+			
 			</div>
 		);
 	}

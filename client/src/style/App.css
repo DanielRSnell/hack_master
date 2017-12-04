@@ -1,0 +1,63 @@
+@import '~antd/dist/antd.css';
+
+.App {
+    text-align: center;
+  }
+
+  .mainheader{
+      padding-left: 3.5em;
+      padding-right: .1em;
+  }
+  .subheader {
+      padding-left: 10em;
+      padding-right: 10em;
+  }
+
+  .container {
+      padding: 1.5em;
+  }
+
+  .menu-logo {
+      float: left!important;
+      padding-left: .5em;
+      font-weight: bold;
+      font-size: 14px;
+  }
+
+  .layout {
+    height: 100%!important;
+  }
+  .example {
+    text-align: center;
+    background: rgba(0,0,0,0.05);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 30px 50px;
+    margin: 20px 0;
+  }
+
+  .ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu {
+     float: right;
+  }
+
+  .coin-list-table-row {
+      padding-top:5em;
+  }
+
+  .img-example {
+    margin-top: 1em;
+    position: center;
+  }
+
+  .coin-img-src {
+      padding-top: .5em;
+  }
+  .coin-name {
+      font-size: 5em;
+      font-weight: bold;
+      position: center;
+  }
+
+  .highcharts-background {
+      fill: transparent;
+  }
