@@ -16,8 +16,10 @@ class CandleChart extends Component {
 	// Error Handling
 
 	componentDidCatch(error, info) {
+		
 		// Is there an error?
 		console.log(error);
+		
 		// Tell about it if so!
 		console.log(info);
 	}
@@ -127,8 +129,11 @@ class CandleChart extends Component {
 		});
 	}
 	
-// Render the data unless data is still pending
+// Render the data unless data is still pending -- as needed
+
 	render() {
+
+	// Pending is not required for Candle / Loading 	
 
 	// Post the data 		
 			

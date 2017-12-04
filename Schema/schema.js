@@ -47,7 +47,11 @@ const CoinInfo = new GraphQLObjectType({
 			args: {
 				symbol: { type: GraphQLString }
 			},
-			resolve(parentValue, args) {
+			resolve(parentValue, args) { 
+				if ( (parentValue.symbol) == 'iota' ) {
+					return axios
+					.get(`https://min-api.cryptocompare.com/data/histoday?fsym=IOT&tsym=USD&allData=true`).then( response => response.data.Data);
+				} else {
 				return axios
 					.get(
 						`https://min-api.cryptocompare.com/data/histoday?fsym=${
@@ -55,7 +59,8 @@ const CoinInfo = new GraphQLObjectType({
 						}&tsym=USD&allData=true`
 					)
 					.then(response => response.data.Data);
-			}
+				}
+			}	
 		},
 		eth_history: {
 			type: new GraphQLList(historyMeta),

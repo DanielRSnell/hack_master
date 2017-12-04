@@ -31,12 +31,11 @@ componentWillMount() {
 
 
   rowClickHandler(id) {
-    console.log("Checking clickable props");
-    console.log(this.state.path);
-    console.log(id);
-    this.setState({path: '/cryptocurrency/'+id});
-    this.props.history.push('/cryptocurrency/' + id);
+
+    this.props.history.push(
+      '/cryptocurrency/' + id); 
   }
+  
 
 render() {
   if (this.props.data.loading) {
